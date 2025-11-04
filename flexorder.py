@@ -121,18 +121,19 @@ class CheckoutFacade:
 
 class CheckoutApp:
     def executar(self):
-        itens1 = [{"nome": "Capa da Invisibilidade", "valor": 150},
-                  {"nome": "Poção de Voo", "valor": 80}]
+        itens1 = [{"nome": "Capa do Batman", "valor": 150},
+                  {"nome": "Poção mágica", "valor": 80}]
         pedido1 = DescontoPix(PedidoBase(itens1))
         checkout1 = CheckoutFacade(pedido1, PagamentoPix(), FreteNormal())
         checkout1.concluir()
 
         print("\n--- Próximo Pedido ---")
 
-        itens2 = [{"nome": "Cristal Mágico", "valor": 600}]
+        itens2 = [{"nome": "Cinto tático", "valor": 600}]
         pedido2 = EmbalagemPresente(PedidoBase(itens2))
         checkout2 = CheckoutFacade(pedido2, PagamentoCredito(), FreteExpresso())
         checkout2.concluir()
 
 
 CheckoutApp().executar()
+
